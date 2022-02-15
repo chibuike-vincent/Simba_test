@@ -10,6 +10,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios"
 import {getAllUsers, MakeTransfer} from "../../BusinessLogic"
+import { TailSpin } from  'react-loader-spinner'
 
 const useRowStyles = makeStyles((theme) => ({
     root: {
@@ -354,15 +355,15 @@ export default function Transactions() {
 
 
                                 <Button onClick={(e) => handleSubmit(e)} className={classes.button} >
-                                    {/* {processing ? (
-                                        <Loader
-                                            type="TailSpin"
-                                            color="#00BFFF"
-                                            height={40}
-                                            width={40}
-                                        />
-                                    ) : "Transfer"} */}
-                                    Transfer
+                                    {processing ? (
+                                        <TailSpin
+                                        heigth="30"
+                                        width="30"
+                                        color='#fff'
+                                        ariaLabel='loading'
+                                      />
+                                    ) : "Transfer"}
+                                    {/* Transfer */}
                                     </Button>
 
                             </div>

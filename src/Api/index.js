@@ -4,7 +4,7 @@ const request = axios.create({
   timeout: 60000,
   timeoutErrorMessage:
     'Either your internet connect is not strong or you have no internet connection',
-  baseURL:  "http://localhost:3001" || process.env.REACT_APP_API_BASE_URI ,
+  baseURL:  "https://simba-test-api.herokuapp.com",
 });
 
 class Api {
