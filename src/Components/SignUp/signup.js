@@ -11,6 +11,7 @@ import { ShowMessage, type } from "../Toaster";
 import * as Loader from "react-loader-spinner";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { TailSpin } from  'react-loader-spinner'
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -215,11 +216,11 @@ function SignUp() {
                             <img src={LogoImage} alt="logo" style={{ width: "100%", height: "100%", borderRadius: "100%" }} />
                         </div>
                         <p>
-                            <span className={classes.logoTextOne}>Send</span><span className={classes.logoTexttwo}>Money</span>
+                            <span className={classes.logoTextOne}>Transfer</span><span className={classes.logoTexttwo}>Zone</span>
                         </p>
                     </div>
                     <div className={classes.logoContainer}>
-                        <p> <span className={classes.logoTextOnedesc}>Send</span><span className={classes.logoTexttwodesc}>Money</span> credits your account with $1000 upon successful sign up. T & C applies.</p>
+                        <p> <span className={classes.logoTextOnedesc}>Transfer</span><span className={classes.logoTexttwodesc}>Zone</span> credits your account with $1000 upon successful sign up. T & C applies.</p>
                     </div>
 
 
@@ -298,15 +299,15 @@ function SignUp() {
                                 <Button
                                     type="submit"
                                     className={classes.button}>
-                                    {/* {processing ? (
-                                        <Loader
-                                            type="TailSpin"
-                                            color="#00BFFF"
-                                            height={40}
-                                            width={40}
-                                        />
-                                    ) : "Sign Up"} */}
-                                    Sign up
+                                    {processing ? (
+                                        <TailSpin
+                                        heigth="30"
+                                        width="30"
+                                        color='#fff'
+                                        ariaLabel='loading'
+                                      />
+                                    ) : "Sign Up"}
+                                    {/* Sign up */}
                                 </Button>
 
 
@@ -316,7 +317,7 @@ function SignUp() {
                 
                     <h5> Already have account? <span className={classes.signUp} onClick={() => navigate("/")} >Sign In!</span></h5>
 
-                    <p className={classes.footer}> &copy; 2022 SendMoney Inc | <span className={classes.footerContactUs}>Contact Us</span></p>
+                    <p className={classes.footer}> &copy; 2022 TransferZone Inc | <span className={classes.footerContactUs}>Contact Us</span></p>
                 </Paper>
             </div>
             <div className={classes.imageContainer}>
